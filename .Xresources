@@ -1,0 +1,52 @@
+URxvt.internalBorder:       15
+URxvt*font: xft:Monofur Nerd Font Mono:style=Book:pixelsize=13
+URxvt*boldFont: xft:Monofur Nerd Font Mono:style=Book:pixelsize=13
+! URxvt*font: xft:Helvetica:style=Regular:pixelsize=10
+! URxvt*boldFont: xft:Helvetica:style=Regular:pixelsize=10
+URxvt*letterSpace: -1
+URxvt.geometry: 130x40
+
+URxvt*scrollBar: false
+
+URxvt.depth: 32
+
+
+! URxvt*background: #2C2C2C
+URxvt*background: #3F3F3F
+URxvt*foreground: #DCDCCC
+! black
+URxvt.color0  : #3F3F3F
+URxvt.color8  : #709080
+! red
+URxvt.color1  : #705050
+URxvt.color9  : #DCA3A3
+! green
+URxvt.color2  : #60B48A
+URxvt.color10 : #72D5A3
+! yellow
+URxvt.color3  : #DFAF8F
+URxvt.color11 : #F0DFAF
+! blue
+URxvt.color4  : #9AB8D7
+URxvt.color12 : #94BFF3
+! magenta
+URxvt.color5  : #DC8CC3
+URxvt.color13 : #EC93D3
+! cyan
+URxvt.color6  : #8CD0D3
+URxvt.color14 : #93E0E3
+! white
+URxvt.color7  : #DCDCCC
+URxvt.color15 : #FFFFFF
+
+
+! rofi settings
+rofi.font: cure 8
+rofi.padding: 10
+rofi.hide-scrollbar: true
+rofi.width: 200
+rofi.lines: 4
+rofi.location: 7
+rofi.yoffset: -20
+rofi.xoffset: 20
+rofi.separator-style: none
