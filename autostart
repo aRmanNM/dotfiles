@@ -1,8 +1,0 @@
-~/.fehbg &
-tint2 &
-# yabar &
-# nm-applet &
-setxkbmap -layout "us,ir" -option "grp:alt_shift_toggle"
-mocp -S &
-compton -cG -o 0.75 -m 0.88 &
-xrdb -merge .Xresources
