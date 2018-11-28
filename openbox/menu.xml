@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3">
+		<item label="rxvt">
+			<action name="Execute">
+				<execute>rxvt-unicode</execute>
+			</action>
+		</item>
+		<item label="web">
+			<action name="Execute">
+				<execute>firefox</execute>
+			</action>
+		</item>
+		<item label="files">
+			<action name="Execute">
+				<execute>rxvt-unicode -e ranger</execute>
+			</action>
+		</item>
+		<item label="music">
+			<action name="Execute">
+				<execute>rxvt-unicode -e mocp</execute>
+			</action>
+		</item>
+		<separator/>
+		<!-- This requires the presence of the 'menu' package to work -->
+		<menu id="root-menu-301512" label="Settings">
+			<item label="OB reconfigure">
+				<action name="Reconfigure"/>
+			</item>
+			<item label="OB Conf">
+				<action name="Execute">
+					<execute>obconf</execute>
+				</action>
+			</item>
+			<item label="OB Menu">
+				<action name="Execute">
+					<execute>obmenu</execute>
+				</action>
+			</item>
+			<item label="GTK settings">
+				<action name="Execute">
+					<execute>lxappearance</execute>
+				</action>
+			</item>
+			<menu id="root-menu-301512-302950" label="DotFiles">
+				<item label="autostart">
+					<action name="Execute">
+						<execute>rxvt-unicode -e vim ~/.config/openbox/autostart</execute>
+					</action>
+				</item>
+				<item label="xresources">
+					<action name="Execute">
+						<execute>rxvt-unicode -e vim ~/.Xresources</execute>
+					</action>
+				</item>
+				<item label="vimrc">
+					<action name="Execute">
+						<execute>rxvt-unicode -e vim ~/.vimrc</execute>
+					</action>
+				</item>
+				<item label="obrc">
+					<action name="Execute">
+						<execute>rxvt-unicode -e vim ~/.config/openbox/rc.xml</execute>
+					</action>
+				</item>
+			</menu>
+			<menu id="root-menu-301512-761739" label="Redshift">
+				<item label="Redshift  start">
+					<action name="Execute">
+						<execute>redshift</execute>
+					</action>
+				</item>
+				<item label="Redshift  stop">
+					<action name="Execute">
+						<execute>pkill redshift</execute>
+					</action>
+				</item>
+			</menu>
+		</menu>
+		<menu id="root-menu-32250" label="System">
+			<item label="Suspend">
+				<action name="Execute">
+					<execute>systemctl suspend</execute>
+				</action>
+			</item>
+			<item label="Poweroff">
+				<action name="Execute">
+					<execute>systemctl poweroff</execute>
+				</action>
+			</item>
+			<item label="Reboot">
+				<action name="Execute">
+					<execute>systemctl reboot</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<item label="Exit">
+			<action name="Exit"/>
+		</item>
+	</menu>
+</openbox_menu>
