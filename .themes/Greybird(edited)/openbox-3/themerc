@@ -59,7 +59,7 @@ window.inactive.title.bg.color: 		                            #DEDEDE
 !! window text
 
 padding.width: 							                                    5
-padding.height: 						                                    5
+padding.height: 						                                    3
 window.label.text.justify:                                      center
 
 window.active.label.bg: 					                              Parentrelative
