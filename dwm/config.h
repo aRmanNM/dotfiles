@@ -1,5 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
+/* ENABLES XF86* KEYS */
 #include <X11/XF86keysym.h>
 
 /* appearance */
@@ -20,8 +21,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* tagging */
+/* USING NAMES WITH NUMBERS IMPROVED MY SWITCHING SPEED */
 static const char *tags[] = { "1.main", "2.browser", "3.code", "4.docs", "5.graphic", "6.files", "7.other", "8.media" };
 
+/* I DIDNT REALLY UNDERSTOOD HOW THESE TAG MASKS WORKED */
+/* SHOULD LEARN BINARY SHIFTING! */
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
