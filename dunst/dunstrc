@@ -47,7 +47,7 @@
 [shortcuts]
     close     = ctrl+space
     close_all = ctrl+shift+space
-    history   = ctrl+grave
+#    history   = ctrl+grave		<----- COMMENTED THIS ONE OUT BECAUSE IT INTERFERES WITH VSCODE TERMINAL SHORTCUT KEY
     context   = ctrl+shift+period
 
 [urgency_low]
