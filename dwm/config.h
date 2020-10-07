@@ -1,5 +1,17 @@
 /* See LICENSE file for copyright and license details. */
 
+/*	WHAT I CHANGED HERE:
+	1. FONT CHANGED
+	2. GAPS PATCH STUFF ADDED (COMMENTD TO AVOID COPY-PASTED BUILD ERROR!)
+	3. CHANGED TAGS NAME
+	4. ASSIGNED APPS TO THOSE TAG NAMES
+	5. SET MASTER AREA TO HAVE THE SAME SIZE AS THE OTHER AREA!
+	6. SET MONOCLE TO BE DEFAULT LAYOUT OPTION (PERSONAL PREFERENCE)
+	7. MODEKEY SET TO SUPER/WINDOWS KEY
+	8. ADDED DIFFERENT COMMANDS TO LAUNCH FREQUENT APPS AND ALSO XF86 KEYS FOR VOLUME(USING SCRIPT) AND BRIGHTNESS
+	9. DEFINED KEYS TO RUN THOSE COMMANDS
+*/
+
 /* ENABLES XF86* KEYS */
 #include <X11/XF86keysym.h>
 
@@ -15,10 +27,10 @@ static const char selbordercolor[]  = "#005577";
 static const char selbgcolor[]      = "#005577";
 static const char selfgcolor[]      = "#eeeeee";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+/* static const unsigned int gappx     = 0;        /* gaps between windows - WORKS ONLY WITH GAPS PATCH APPLIED */
 
 /* tagging */
 /* USING NAMES WITH NUMBERS IMPROVED MY SWITCHING SPEED */
@@ -48,9 +60,9 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
+	{ "[M]",      monocle }, /* I PREFER MONOCLE AS DEFAULT THEN I CHANGE TO TILES IF I WANT TO SEE THEM BOTH */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
 };
 
 /* key definitions */
@@ -67,7 +79,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]   = { "dmenu_run_history", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *rofifb[]    = { "rofi", "-modi", "fb:rofi-file-browser.sh", "-show", "fb" , NULL};
+static const char *rofifb[]    	= { "rofi", "-modi", "fb:rofi-file-browser.sh", "-show", "fb" , NULL};
 static const char *termcmd[]    = { "rxvt-unicode", NULL };
 static const char *firefox[]    = { "firefox", NULL };
 static const char *ranger[]     = { "rxvt-unicode", "-e", "ranger", NULL };
@@ -77,6 +89,16 @@ static const char *voldown[]    = { "volnotif.sh", "down", NULL };
 static const char *volmute[]    = { "volnotif.sh", "toggle", NULL };
 static const char *brightup[]   = { "brightnessctl", "set", "+10%", NULL };
 static const char *brightdown[] = { "brightnessctl", "set", "10%-", NULL };
+
+/*	ADD THESE LINES 
+	TO THE LIST TO ENABLE GAPS RESIZEING
+	ONLY AFTER APPLYING GAPS PATCH
+*/ 
+/*
+    { MODKEY,                       XK_minus,                   setgaps,        {.i = -1 } },
+    { MODKEY,                       XK_equal,                   setgaps,        {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_equal,                   setgaps,        {.i = 0  } },
+*/
 
 static Key keys[] = {
 	/* modifier                     key                         function        argument */
@@ -111,9 +133,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,                  focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                   tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,                  tagmon,         {.i = +1 } },
-    { MODKEY,                       XK_minus,                   setgaps,        {.i = -1 } },
-    { MODKEY,                       XK_equal,                   setgaps,        {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_equal,                   setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -124,6 +143,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
     { MODKEY|ShiftMask,             XK_q,                       quit,           {0} },
 };
+
 
 /* button definitions */
 /* click can be ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
