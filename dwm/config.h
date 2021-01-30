@@ -102,11 +102,11 @@ static const char *brightdown[] = { "brightnessctl", "set", "10%-", NULL };
 
 static Key keys[] = {
 	/* modifier                     key                         function        argument */
-    { 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = volup } },
-    { 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = voldown } },
-    { 0,                            XF86XK_AudioMute,           spawn,          {.v = volmute } },
-    { 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = brightup } },
-    { 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = brightdown } },
+	{ 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = volup } },
+	{ 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = voldown } },
+	{ 0,                            XF86XK_AudioMute,           spawn,          {.v = volmute } },
+	{ 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = brightup } },
+	{ 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = brightdown } },
 	{ MODKEY,                       XK_p,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_o,                       spawn,          {.v = rofifb } },
 	{ MODKEY|ShiftMask,             XK_Return,                  spawn,          {.v = termcmd } },
@@ -141,7 +141,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
-    { MODKEY|ShiftMask,             XK_q,                       quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,                       quit,           {0} },
 };
 
 
