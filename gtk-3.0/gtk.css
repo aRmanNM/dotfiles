@@ -1,0 +1,4 @@
+/* fixes button spacing in some gtk apps like thunar, geany etc. */
+buttonbox {
+	margin: 6px;
+}
